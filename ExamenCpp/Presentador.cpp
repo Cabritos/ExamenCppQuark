@@ -119,7 +119,7 @@ void Presentador::mostrarPantallaIngresoCotizcion()
 bool Presentador::mostrarOpciones()
 {
 	string input;
-	
+
 	while (true)
 	{
 		Vista::registrarInput(input);
@@ -142,6 +142,7 @@ bool Presentador::mostrarOpciones()
 		if (input != "1" && input != "2")
 		{
 			Vista::mostrarMensaje("\nIngrese una opcion valida:\n");
+			continue;
 		}
 
 		return input == "2";
