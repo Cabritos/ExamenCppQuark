@@ -109,7 +109,7 @@ void Presentador::mostrarPantallaIngresoCotizcion()
 		4 = prenda
 		3 = largo mangas
 		2 = tipo cuello
-		1 = tupo de pantalon
+		1 = tipo de pantalon
 		0 = calidad
 	*/
 	bitset<5> codigoPrenda;
@@ -300,7 +300,7 @@ void Presentador::mostrarIngresoDeCantidad(bitset<5>& codigoPrenda, float precio
 	pantallaActual = ResultadoCotizacion;
 }
 
-array<string, 8> Presentador::convertirPresentadorAStringArray(const Cotizacion& cotizacion) const
+array<string, 8> Presentador::convertirCotizacionAStringArray(const Cotizacion& cotizacion) const
 {
 	auto precioBase = to_string(cotizacion.getPrecioBase());
 	precioBase = precioBase.substr(0, precioBase.find('.') + 3);
@@ -329,7 +329,7 @@ array<string, 8> Presentador::convertirPresentadorAStringArray(const Cotizacion&
 void Presentador::mostrarPantallaResultadoCotizacion()
 {
 	const auto ultimaCotizacion = historial.back();
-	const auto cotizacion = convertirPresentadorAStringArray(ultimaCotizacion);
+	const auto cotizacion = convertirCotizacionAStringArray(ultimaCotizacion);
 
 	Vista::mostrarPantallaResultadoCotizacion(cotizacion);
 	Vista::insertarEsperaInput();
@@ -356,7 +356,7 @@ void Presentador::insertarHistorialCotizaciones() const
 	{
 		for (const auto& cotizacion : historial)
 		{
-			const auto cotizacionString = convertirPresentadorAStringArray(cotizacion);
+			const auto cotizacionString = convertirCotizacionAStringArray(cotizacion);
 
 			Vista::insertarCotiacion(cotizacionString);
 			Vista::insertarSeparador('-');

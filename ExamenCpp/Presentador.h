@@ -31,7 +31,7 @@ private:
 	void mostrarOpcionesTipoPantalon(bitset<5>& codigoPrenda);
 	void mostrarIngresoDePrecio(bitset<5>& codigoPrenda);
 	void mostrarIngresoDeCantidad(bitset<5>& codigoPrenda, float precio);
-	array<string, 8> convertirPresentadorAStringArray(const Cotizacion& cotizacion) const;
+	array<string, 8> convertirCotizacionAStringArray(const Cotizacion& cotizacion) const;
 	void mostrarPantallaResultadoCotizacion();
 	void mostrarPantallaHistorialCotizaciones();
 	void insertarHistorialCotizaciones() const;
